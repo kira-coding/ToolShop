@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toolshop</title>
+    <link href="{%static 'boot/css/bootstrap.min.css'%}"
+     rel="stylesheet" 
+     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous">
+    <!--<script src="https://kit.fontawesome.com/500588d13a.js" crossorigin="anonymous"></script>-->
+</head>
+<body background="{% static 'images/background.jpg'%}">
+    <main>
+        
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/"><i class="fa-sharp fa-solid fa-cart-shopping">BrukeToolShop</i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+        
+              
+            </div>
+          </nav></main>
+          <div class="container px-4 py-5" id="custom-cards">
+            <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+              
+          {% for i in k%}
+            <div class="col">
+                  <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+                        <img src="{{i.picture.url}}" class="card-img-top" name='product' value='{{i.name}}'>
+              <div class="card-body">
+                <h5 class="card-title">{{i.name}}</h5>
+                <p class="card-text">{{i.disc}}</p>
+                <button class="btn btn-primary" disabled='true' > price {{i.price}}</button>
+              </div>
+            </div>
+          </div>{%endfor%}
+        </div></div>
+            <script src="{%static 'boot/js/bootstrap.bundle.min.js'%}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
