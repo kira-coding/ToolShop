@@ -1,0 +1,1 @@
+web gunicorn ToolShop.wsgi:application --log-file -
